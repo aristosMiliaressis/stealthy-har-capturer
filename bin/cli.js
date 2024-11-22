@@ -7,9 +7,7 @@ import puppeteerExtraStealth from 'puppeteer-extra-plugin-stealth';
 import PuppeteerHar from '../lib/PuppeteerHar.js';
 
 const program = new Command();
-program
-  .name('stealthy-har-capturer')
-  .version('1.0.0');
+program.name('stealthy-har-capturer');
 
 function collect(value, previous) {
   return previous.concat([value]);
