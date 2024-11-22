@@ -1,0 +1,36 @@
+{
+  "name": "@arist0phanes/stealthy-har-capturer",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "chrome-har": "^1.0.1",
+    "puppeteer": "^22.6.1",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "commander": "12.1.0"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "arist0phanes",
+  "license": "ISC",
+  "description": "stealthy-har-capturer\r ==",
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aristosMiliaressis/stealthy-har-capturer.git"
+  },
+  "keywords": [
+    "har",
+    "headless",
+    "stealth"
+  ],
+  "bugs": {
+    "url": "https://github.com/aristosMiliaressis/stealthy-har-capturer/issues"
+  },
+  "homepage": "https://github.com/aristosMiliaressis/stealthy-har-capturer#readme"
+}
