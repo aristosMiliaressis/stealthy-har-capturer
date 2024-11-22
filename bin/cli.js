@@ -4,7 +4,7 @@
 import puppeteer from 'puppeteer-extra';
 import { Command } from 'commander';
 import puppeteerExtraStealth from 'puppeteer-extra-plugin-stealth';
-import PuppeteerHar from './lib/PuppeteerHar.js';
+import PuppeteerHar from '../lib/PuppeteerHar.js';
 
 const program = new Command();
 program

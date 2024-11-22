@@ -9,7 +9,9 @@
     "puppeteer-extra-plugin-stealth": "^2.11.2",
     "commander": "12.1.0"
   },
-  "main": "index.js",
+  "bin": {
+    "stealthy-har-capturer": "./bin/cli.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
