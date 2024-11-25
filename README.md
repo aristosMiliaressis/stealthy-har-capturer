@@ -11,13 +11,13 @@ npm install -g @arist0phanes/stealthy-har-capturer
 Usage: stealthy-har-capturer [options] <url>
 
 Arguments:
-  url                    url
+  url                      The url to navigate.
 
 Options:
-  -V, --version          output the version number
-  -H, --header <header>  Additional headers (default: [])
-  -d, --delay <seconds>  Delay in seconds to wait (default: 5)
-  -h, --help             display help for command
+  -H, --header <header>    Additional headers (default: [])
+  -o, --output <filename>  Output HAR filename (default: "out.har")
+  -d, --delay <seconds>    Delay in seconds to wait (default: 5)
+  -h, --help               display help for command
 ```
 
 **Usage**

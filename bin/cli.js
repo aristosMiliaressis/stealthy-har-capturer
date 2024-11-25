@@ -15,8 +15,9 @@ function collect(value, previous) {
 
 program
   .option('-H, --header <header>', 'Additional headers', collect, [])
+  .option('-o, --output <filename>', 'Output HAR filename', "out.har")
   .option('-d, --delay <seconds>', 'Delay in seconds to wait', 5)
-  .argument('<url>', 'url')
+  .argument('<url>', 'The url to navigate.')
   .parse(process.argv);
 
 if (program.args.length === 0) {
@@ -51,7 +52,7 @@ let sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
   const har = new PuppeteerHar(page);
   await har.start({
-    path: pageUrl.hostname + '.har',
+    path: options.output,
     saveResponse: true
   });
 
