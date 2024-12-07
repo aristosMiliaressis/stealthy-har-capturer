@@ -3,7 +3,7 @@ stealthy-har-capturer
 
 **Installation**
 ```bash
-npm install -g @arist0phanes/stealthy-har-capturer
+npm install -g stealthy-har-capturer
 ```
 
 **Help Page**

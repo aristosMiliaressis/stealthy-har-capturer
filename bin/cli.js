@@ -16,7 +16,8 @@ function collect(value, previous) {
 program
   .option('-H, --header <header>', 'Additional headers', collect, [])
   .option('-o, --output <filename>', 'Output HAR filename', "out.har")
-  .option('-d, --delay <seconds>', 'Delay in seconds to wait', 5)
+  .option('-g, --grace <msecs>', 'time to wait after the load event', 1000)
+  .option('-t, --timeout <msecs>', 'time to wait before giving up with a URL', 5000)
   .argument('<url>', 'The url to navigate.')
   .parse(process.argv);
 
@@ -39,10 +40,10 @@ let sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
   })
   const page = await browser.newPage();
 
-  const pageUrl = new URL(url)
   if (options.header) {
     let headers = {};
     for (const header of options.header) {
+      if (!header.contains(':')) continue;
       const name = header.split(':')[0];
       const value = header.split(':')[1].trimStart();
       headers[name] = value;
@@ -56,9 +57,9 @@ let sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
     saveResponse: true
   });
 
-  await page.goto(url);
+  await page.goto(url, {timeout: options.timeout});
 
-  await sleep(options.delay * 1000)
+  await sleep(options.grace)
 
   await har.stop();
   await browser.close();
