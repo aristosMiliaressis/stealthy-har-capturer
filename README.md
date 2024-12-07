@@ -16,7 +16,8 @@ Arguments:
 Options:
   -H, --header <header>    Additional headers (default: [])
   -o, --output <filename>  Output HAR filename (default: "out.har")
-  -d, --delay <seconds>    Delay in seconds to wait (default: 5)
+  -g, --grace <msecs>      time to wait after the load event (default: 1000)
+  -t, --timeout <msecs>    time to wait before giving up with a URL (default: 5000)
   -h, --help               display help for command
 ```
 
