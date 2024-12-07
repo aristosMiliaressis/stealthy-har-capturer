@@ -43,7 +43,7 @@ let sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
   if (options.header) {
     let headers = {};
     for (const header of options.header) {
-      if (!header.contains(':')) continue;
+      if (!header.includes(':')) continue;
       const name = header.split(':')[0];
       const value = header.split(':')[1].trimStart();
       headers[name] = value;
