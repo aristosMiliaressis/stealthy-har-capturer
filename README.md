@@ -23,7 +23,5 @@ Options:
 
 **Usage**
 ```bash
-google-chrome --no-sandbox --remote-debugging-port=9222 --headless &
-
-stealthy-har-capturer -d 4 -H 'X-Random-Header: sdfghjsdf' https://example.com
+stealthy-har-capturer -t 5000 -g 4000 -H 'X-Random-Header: sdfghjsdf' -o example.har https://example.com
 ```
