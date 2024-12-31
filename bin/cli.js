@@ -35,7 +35,6 @@ let sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 (async () => {
   const browser = await puppeteer.launch({
-    channel: 'chrome',
     args: ['--no-sandbox'],
     headless: true
   })
