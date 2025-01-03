@@ -15,6 +15,7 @@ function collect(value, previous) {
 
 program
   .option('-H, --header <header>', 'Additional headers', collect, [])
+  .option('-A, --chrome-args <argument>', 'Additional chrome arguments', collect, [])
   .option('-o, --output <filename>', 'Output HAR filename', "out.har")
   .option('-g, --grace <msecs>', 'time to wait after the load event', 1000)
   .option('-t, --timeout <msecs>', 'time to wait before giving up with a URL', 5000)
@@ -34,8 +35,16 @@ const options = program.opts();
 let sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 (async () => {
+  let chrome_args = ['--no-sandbox'];
+
+  if (options.chromeArgs) {
+    for (const arg of options.chromeArgs) {
+      chrome_args.push(arg)
+    }
+  }
+
   const browser = await puppeteer.launch({
-    args: ['--no-sandbox'],
+    args: chrome_args,
     headless: true
   })
   const page = await browser.newPage();

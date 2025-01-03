@@ -1,6 +1,6 @@
 {
   "name": "stealthy-har-capturer",
-  "version": "1.2.8",
+  "version": "1.3.8",
   "type": "module",
   "dependencies": {
     "chrome-har": "^1.0.1",
