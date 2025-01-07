@@ -19,7 +19,7 @@ program
   .option('-o, --output <filename>', 'Output HAR filename', "out.har")
   .option('-g, --grace <msecs>', 'time to wait after the load event', 1000)
   .option('-t, --timeout <msecs>', 'time to wait before giving up with a URL', 5000)
-  .option('-S, --inject-script <filename>', 'Inject a content-script', 5000)
+  .option('-S, --inject-script <filename>', 'Inject a content-script', "")
   .argument('<url>', 'The url to navigate.')
   .parse(process.argv);
 
